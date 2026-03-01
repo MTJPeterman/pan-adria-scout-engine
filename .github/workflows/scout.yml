@@ -8,6 +8,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Setup Google credentials
-        run: echo '${{ secrets.GOOGLE_CREDENTIALIALS }}' > credentials.json
+        run: echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credentials.json
 
       - name: Run scout
         run: python main.py
