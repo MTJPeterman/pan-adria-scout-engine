@@ -23,4 +23,7 @@ jobs:
         run: echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credentials.json
 
       - name: Run scout
-        run: python main.py
+        - name: Run scout
+  run: python main.py
+  env:
+    GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_CREDENTIALS }}
